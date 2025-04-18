@@ -1,7 +1,13 @@
 package com.springboot.bookmarket.domain;
 
 import java.math.BigDecimal;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class Book {
     private String bookId;
     private String name;
@@ -10,6 +16,7 @@ public class Book {
     private String description;
     private String publisher;
     private String category;
+
     private long unitsInStock;
     private String releaseDate;
     private String condition;

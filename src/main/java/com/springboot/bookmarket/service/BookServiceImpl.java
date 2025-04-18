@@ -22,6 +22,10 @@ public class BookServiceImpl implements BookService {
         return bookById;
     }
 
+    public void setNewBook(Book book) {
+        bookRepository.setNewBook(book);
+    }
+
     public List<Book> getBookListByCategory(String category) {
         List<Book> booksByCategory = bookRepository.getBookListByCategory(category);
         return booksByCategory;
