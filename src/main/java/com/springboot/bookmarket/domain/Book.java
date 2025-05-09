@@ -1,103 +1,118 @@
 package com.springboot.bookmarket.domain;
-
 import java.math.BigDecimal;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
+import jakarta.validation.constraints.*;
+import org.springframework.web.multipart.MultipartFile;
+import com.springboot.bookmarket.validator.BookId;
+
+import lombok.Data;
+@Data 
 public class Book {
-    private String bookId;
-    private String name;
-    private BigDecimal unitPrice;
-    private String author;
-    private String description;
-    private String publisher;
-    private String category;
+	@BookId
+	@Pattern(regexp = "ISBN[1-9]+", message = "{Pattern.book.bookId")
+	private String bookId; //도서ID
 
-    private long unitsInStock;
-    private String releaseDate;
-    private String condition;
+	@Size(min = 4, max = 50, message="{Size.book.name}")
+	private String name; // 도서명
 
-    public String getBookId() {
-        return bookId;
-    }
+	@Min(value=0, message = "{Min.book.unitPrice}")
+	@Digits(integer=8, fraction=2, message = "{Digits.book.unitPrice}")
+	@NotNull(message = "{NotNull.book.unitPrice}")
+	private BigDecimal unitPrice; // 가격
 
-    public void setBookId(String bookId) {
-        this.bookId = bookId;
-    }
+	private String author; // 저자
+	private String description; // 설명
+	private String publisher; // 출판사
+	private String category; // 분류
+	private long unitsInStock; // 재고수
+	private String releaseDate; // 출판일
+	private String condition; // 상태 : 신규도서/E-Book/중고도서
+	private String fileName; //도서 이미지 파일
+	private MultipartFile bookImage;  //도서 이미지
+/*
+	public Book() {
+		super();
+	}
 
-    public BigDecimal getUnitPrice() {
-        return unitPrice;
-    }
+	
+	public String getBookId() {
+		return bookId;
+	}
 
-    public void setUnitPrice(BigDecimal unitPrice) {
-        this.unitPrice = unitPrice;
-    }
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getAuthor() {
-        return author;
-    }
+	public BigDecimal getUnitPrice() {
+		return unitPrice;
+	}
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+	public void setUnitPrice(BigDecimal unitPrice) {
+		this.unitPrice = unitPrice;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public String getAuthor() {
+		return author;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setAuthor(String author) {
+		this.author = author;
+	}
 
-    public String getPublisher() {
-        return publisher;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public String getCategory() {
-        return category;
-    }
+	public String getPublisher() {
+		return publisher;
+	}
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
 
-    public long getUnitsInStock() {
-        return unitsInStock;
-    }
+	public String getCategory() {
+		return category;
+	}
 
-    public void setUnitsInStock(long unitsInStock) {
-        this.unitsInStock = unitsInStock;
-    }
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
-    public String getReleaseDate() {
-        return releaseDate;
-    }
+	public long getUnitsInStock() {
+		return unitsInStock;
+	}
 
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
-    }
+	public void setUnitsInStock(long unitsInStock) {
+		this.unitsInStock = unitsInStock;
+	}
 
-    public String getCondition() {
-        return condition;
-    }
+	public String getReleaseDate() {
+		return releaseDate;
+	}
 
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+	public String getCondition() {
+		return condition;
+	}
+
+	public void setCondition(String condition) {
+		this.condition = condition;
+	}
+*/
 }
