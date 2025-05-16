@@ -34,16 +34,16 @@
 			<p th:text ="${book.description}"></p>
 			<br>
 			<p><b>도서코드 : </b><span class="badge text-bg-info" th:text ="${book.bookId}"></span>
-			<p><b>저자</b> : <span th:text ="${book.author}">
-				<p><b>출판사</b> : <span th:text ="${book.publisher}">
-				<p><b>출판일</b> : <span th:text ="${book.releaseDate}">
-				<p><b>분류</b> : <span th:text ="${book.category}">
-				<p><b>재고수</b> : <span th:text ="${book.unitsInStock}">
+			<p><b>저자</b> : <span th:text ="${book.author}"></span>
+			<p><b>출판사</b> : <span th:text ="${book.publisher}"></span>
+			<p><b>출판일</b> : <span th:text ="${book.releaseDate}"></span>
+			<p><b>분류</b> : <span th:text ="${book.category}"></span>
+			<p><b>재고수</b> : <span th:text ="${book.unitsInStock}"></span>
 				<h4 th:text ="${book.unitPrice}+'원'"></h4>
 				<br>
-			<p><a href="#" class="btn btn-primary">도서주문 &raquo;</a> 
+			<p><a href="#" class="btn btn-primary">도서주문 &raquo;</a>
+			<a href="/BookMarket/cart" class="btn btn-warning">장바구니 &raquo;</a>
 			<a href="/BookMarket/books" class="btn btn-secondary">도서 목록 &raquo;</a>
-
 
 
 		</div>
