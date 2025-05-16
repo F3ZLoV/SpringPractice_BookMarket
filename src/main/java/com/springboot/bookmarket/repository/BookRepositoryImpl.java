@@ -117,8 +117,7 @@ public class BookRepositoryImpl implements BookRepository {
 	            break;
 	        } 
 	     }
-	     if(bookInfo == null) 
-	         // throw new IllegalArgumentException("도서ID가 "+bookId + "인 해당 도서를 찾을 수 없습니다.");
+	     if(bookInfo == null)
 	    	 throw new BookIdException(bookId);
 	     return bookInfo;
 	  }	 

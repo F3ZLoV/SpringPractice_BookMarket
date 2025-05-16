@@ -80,16 +80,11 @@ public class BookController {
 	}
 	
 	@GetMapping("/{category}") 	
-	public String requestBooksByCategory(
-	           @PathVariable("category") String bookCategory, Model model) {  
-	    List<Book> booksByCategory =bookService.getBookListByCategory(bookCategory); 
-	    
+	public String requestBooksByCategory(@PathVariable("category") String bookCategory, Model model) {
+	    List<Book> booksByCategory =bookService.getBookListByCategory(bookCategory);
 	    if (booksByCategory == null || booksByCategory.isEmpty()) {
 			throw new CategoryException();
-	    	//throw new IllegalArgumentException("도서ID가 인 해당 도서를 찾을 수 없습니다.");
-	    	
 		}
-	   
 	    model.addAttribute("bookList", booksByCategory); 
 	    return "books"; 
 	 }
@@ -149,13 +144,10 @@ public class BookController {
 	 @GetMapping("/download")
 	 public void downloadBookImage(@RequestParam("file") String paramKey,                         
 		                         HttpServletResponse response) throws IOException {
-
-		
 		 if (paramKey == null) {
 	            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 	            return;
 	     }
-		 
 	    File imageFile = new File(fileDir + paramKey );	   
 	    
 	    if (imageFile.exists() == false) {
@@ -181,15 +173,11 @@ public class BookController {
 	 
 	 @InitBinder
 	 public void initBinder(WebDataBinder binder) {
-		 //binder.setValidator(unitsInStockValidator); 
-		binder.setValidator(bookValidator); 
+		 binder.setValidator(bookValidator);
 		 binder.setAllowedFields("bookId","name","unitPrice","author","description","publisher","category",
 	                              "unitsInStock","totalPages", "releaseDate", "condition", "bookImage");
 	 }
-	 
-		
-	 
-	 
+
 	 @ExceptionHandler(value={BookIdException.class}) 
 	    public ModelAndView handleError(HttpServletRequest req, BookIdException exception) {
 		   ModelAndView mav = new ModelAndView(); 
