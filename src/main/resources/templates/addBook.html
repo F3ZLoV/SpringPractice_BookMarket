@@ -17,7 +17,7 @@
 
     <div class="p-5 mb-4 bg-body-tertiary rounded-3">
         <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold"><span th:text="#{addBook.form.title.label}"/> </h1>
+            <h1 class="display-5 fw-bold"><span th:text="#{addBook.form.title.label}"></span> </h1>
             <p class="col-md-8 fs-4">BookMarket</p>
         </div>
     </div>
@@ -37,68 +37,68 @@
                     <input  type="text" name="bookId"  class="form-control" th:field="*{bookId}"/>
                 </div>
                 <div class="col-sm-6">
-                    <p class="text-danger" th:errors="*{bookId}"/>
+                    <p class="text-danger" th:errors="*{bookId}"></p>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.name.label}"/></label>
+                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.name.label}"></span></label>
                 <div class="col-sm-3">
                     <input   type="text" name="name"  class="form-control" th:field="*{name}"/>
                 </div>
                 <div class="col-sm-6">
-                    <p class="text-danger" th:errors="*{name}"/>
+                    <p class="text-danger" th:errors="*{name}"></p>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.unitPrice.label}"/></label>
+                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.unitPrice.label}"></span></label>
                 <div class="col-sm-3">
                     <input   type="text" name="unitPrice" class="form-control" th:field="*{unitPrice}"/>
                 </div>
                 <div class="col-sm-6">
-                    <p class="text-danger"  th:errors="*{unitPrice}"/>
+                    <p class="text-danger"  th:errors="*{unitPrice}"></p>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.author.label}"/></label>
+                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.author.label}"></span></label>
                 <div class="col-sm-3">
                     <input   type="text" name="author" class="form-control" th:field="*{author}"/>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.description.label}"/></label>
+                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.description.label}"></span></label>
                 <div class="col-sm-5">
                     <textarea  type="text" name="description" cols="50" rows="2" class="form-control" th:field="*{description}"> </textarea>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.publisher.label}"/></label>
+                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.publisher.label}"></span></label>
                 <div class="col-sm-3">
                     <input   type="text" name="publisher" class="form-control" th:field="*{publisher}"/>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.category.label}"/></label>
+                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.category.label}"></span></label>
                 <div class="col-sm-3">
                     <input  type="text" name="category" class="form-control" th:field="*{category}"/>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.unitsInStock.label}"/> </label>
+                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.unitsInStock.label}"></span> </label>
                 <div class="col-sm-3">
                     <input  type="text" name="unitsInStock" class="form-control" th:field="*{unitsInStock}"/>
                 </div>
                 <div class="col-sm-6">
-                    <p class="text-danger"  th:errors="*{unitsInStock}"/>
+                    <p class="text-danger"  th:errors="*{unitsInStock}"></p>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.releaseDate.label}"/></label>
+                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.releaseDate.label}"></span></label>
                 <div class="col-sm-3">
                     <input  type="text" name="releaseDate" class="form-control" th:field="*{releaseDate}"/>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.condition.label}"/></label>
+                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.condition.label}"></span></label>
                 <div class="col-sm-3">
                     <input type="radio" name="condition" value="New" /> New
                     <input type="radio"  name="condition" value="Old" /> Old
@@ -106,14 +106,14 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.bookImage.label}"/></label>
+                <label class="col-sm-2 control-label" ><span th:text="#{addBook.form.bookImage.label}"></span></label>
                 <div class="col-sm-7">
                     <input type="file"  name="bookImage"  class="form-control" />
                 </div>
             </div>
             <div class="mb-3 row">
                 <div class="col-sm-offset-2 col-sm-10" >
-                    <button type="submit" class="btn btn-primary" th:text="#{addBook.form.button.label}"/>
+                    <button type="submit" class="btn btn-primary" th:text="#{addBook.form.button.label}"></button>
                 </div>
             </div>
         </form>
