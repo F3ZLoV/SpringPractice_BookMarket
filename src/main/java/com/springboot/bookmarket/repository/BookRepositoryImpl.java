@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.springboot.bookmarket.domain.Book;
@@ -14,7 +15,6 @@ import com.springboot.bookmarket.exception.BookIdException;
 
 @Repository
 public class BookRepositoryImpl implements BookRepository {
-
 	private List<Book> listOfBooks = new ArrayList<Book>();
 
 	public BookRepositoryImpl() {	
@@ -60,7 +60,8 @@ public class BookRepositoryImpl implements BookRepository {
 		listOfBooks.add(book1);
 		listOfBooks.add(book2);
 		listOfBooks.add(book3);
-
+		
+		
 	}
 
 	public List<Book> getAllBookList() {
@@ -117,7 +118,8 @@ public class BookRepositoryImpl implements BookRepository {
 	            break;
 	        } 
 	     }
-	     if(bookInfo == null)
+	     if(bookInfo == null) 
+	         // throw new IllegalArgumentException("도서ID가 "+bookId + "인 해당 도서를 찾을 수 없습니다.");
 	    	 throw new BookIdException(bookId);
 	     return bookInfo;
 	  }	 
