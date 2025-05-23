@@ -14,6 +14,7 @@ public class Cart {
 
     private Map<String, CartItem> cartItems;
     private BigDecimal grandTotal;
+
     public Cart() {
         cartItems = new HashMap<String, CartItem>();
         grandTotal = new BigDecimal(0);
@@ -33,5 +34,18 @@ public class Cart {
             cartItems.put(bookId, item);
         }
         updateGrandTotal();
+    }
+
+    public void removeCartItem(CartItem item) {
+        String bookId = item.getBook().getBookId();
+        cartItems.remove(bookId);
+        updateGrandTotal();
+    }
+
+    public void updateGrandTotal() {
+        grandTotal= new BigDecimal(0);
+        for(CartItem item : cartItems.values()){
+            grandTotal = grandTotal.add(item.getTotalPrice());
+        }
     }
 }

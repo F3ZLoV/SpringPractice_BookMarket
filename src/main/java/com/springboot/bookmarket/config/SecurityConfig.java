@@ -40,6 +40,12 @@ public class SecurityConfig{
     	
     	http
     	.csrf(AbstractHttpConfigurer::disable)
+				.authorizeHttpRequests(
+						authorizeRequests -> authorizeRequests
+								.requestMatchers("/books/add").hasRole("ADMIN")
+								.requestMatchers("/order/list").hasRole("ADMIN")
+								.anyRequest().permitAll()
+				)
 
 		// 특정 URL에 대한 권한 설정.
         .authorizeHttpRequests(
